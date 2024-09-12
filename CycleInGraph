@@ -1,0 +1,14 @@
+finds cycle in a graph.
+intput edges = [1,2,0,0].
+index = edges.get(i), n = i;
+
+
+public int findCycle(List<Integer> edges, int index, int n, int cnt){
+
+        if(edges.get(index) == n){v[index] = 1; return ++cnt;}
+        if(v[index] != 0){return cnt * - 1;}
+
+        v[index] = 1;
+        
+        return findCycle(edges, edges.get(index), n, cnt + 1);
+    }
